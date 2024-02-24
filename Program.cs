@@ -36,8 +36,14 @@ string[] FilterArray (string[] array)
     return arrayResult;
 }
 
+void PrintArray (string[] array)
+{
+    System.Console.WriteLine("[{0}]", string.Join(", ", array));
+}
+
 System.Console.WriteLine("Enter array size: ");
 int size = Convert.ToInt32(Console.ReadLine());
 string[] array = CreateArray(size);
 
 string[] resultArray = FilterArray(array);
+PrintArray(resultArray);
