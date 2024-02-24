@@ -9,6 +9,35 @@
     return array;
 }
 
+string[] FilterArray (string[] array)
+{
+    int size = 0;
+    int index = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i].Length <= 3)
+        {
+            size++;
+        }
+    }   
+
+    string[] arrayResult = new string[size];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i].Length <= 3)
+        {
+            arrayResult[index] = array[i];
+            index++;
+        }
+    }
+
+    return arrayResult;
+}
+
 System.Console.WriteLine("Enter array size: ");
 int size = Convert.ToInt32(Console.ReadLine());
 string[] array = CreateArray(size);
+
+string[] resultArray = FilterArray(array);
